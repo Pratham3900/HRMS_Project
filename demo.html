@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationality Dropdown</title>
+</head>
+<body>
+    <form>
+        <label for="nationality">Nationality:</label>
+        <select id="nationality" name="nationality" required>
+            <option value="">Select a Country</option>
+        </select>
+    </form>
+
+    <script>
+    // JavaScript code to fetch countries and populate the dropdown
+    document.addEventListener("DOMContentLoaded", function() {
+        // Call the API when the page loads
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                // Get the nationality dropdown element
+                const nationalitySelect = document.getElementById('nationality');
+
+                // Loop through the data and populate the dropdown
+                data.forEach(country => {
+                    // Create a new option element
+                    const option = document.createElement('option');
+                    option.value = country.cca2;  // We can use the country code as the value
+                    option.textContent = country.name.common; // The country name as the display text
+
+                    // Append the option to the select dropdown
+                    nationalitySelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching countries:", error);
+            });
+    });
+    </script>
+</body>
+</html>

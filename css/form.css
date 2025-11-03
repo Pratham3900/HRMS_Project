@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #000;
+    /*for creating variable for access in whole webpage*/
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #ff6600;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    
+
+}
+
+.container {
+    /* margin-top: 300px; */
+    position: absolute;
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.container .form{
+   
+    padding: 30px;
+   
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+
+
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #4070f4;
+    border-radius: 25px;
+}
+.form .input-field{
+    /* background-color: red; */
+
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    /* border: 2px solid #ff6600; */
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+
+}
+
+.input-field input:is(:focus,:valid)~i{
+
+    color:#4070f4;
+
+}
+.input-field input:is(:focus,:valid){
+    border-bottom-color:#4070f4 ;
+}
+
+.form .checkbox-text{
+    display: flex;
+    justify-content:end;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.form a.text{
+    color: #4070f4;
+    text-decoration: none;
+
+}
+.form a:hover{
+    text-decoration: underline;
+    
+}
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px; 
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form .button:hover{
+ background-color: #265df2;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+.gender-title{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.gender-category{
+    margin-top: 40px;
+    color: black;
+}
+.gender-category label{
+ 
+    padding: 0 20px 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+
+    
+}
+
+.gender-category input{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+   margin-left: 20px;
+   margin-top: 10px;
+    
+}
+
+/* date of birth */
+.date-field{
+    position: relative;
+    height: 50px;
+    width: 94%;
+    margin-top: 30px;
+}
+
+.date-field i{
+    position:absolute;
+    top: 50%;
+    color: #999;
+    font-size: 23px;
+    left: 0;
+    margin-top: 10px;
+}
+
+
+ 
+.date-field input{
+    position: absolute;
+    height: 28px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    margin-left:30px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.date-field p{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.date-field input:is(:focus,:valid)~i{
+
+    color:#4070f4;
+
+}
+.date-field input:is(:focus,:valid){
+    border-bottom-color:#4070f4 ;
+}
+
+  /* The message box is shown when the user clicks on the password field */
+  #message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    /* position: relative; */
+    padding: 20px;
+    margin-top: 10px;
+    /* z-index: 2; */
+
+  }
+
+  #message p {
+    padding: 10px 35px;
+    font-size: 18px;
+  }
+
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+
+  /*captcha  */
+.form .captcha-field{
+    height: 50px;
+    width: 50%;
+    margin-top: 30px;
+    /* border: red 2px solid; */
+}
+
+.captcha-field input{
+    height: 100%;
+    width: 70%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+
+}
+.inline{
+    display:inline-block;
+}
+
+#image{
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px 5px gray;
+    width: 90px;
+    height: 40px;
+    padding-left: 6px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    user-select: none;
+    text-decoration:line-through;
+    font-style: italic ;
+    font-size: 25px;
+    border: red 2px solid;
+    margin-left: 10px;
+    
+}

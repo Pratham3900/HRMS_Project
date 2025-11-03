@@ -1,0 +1,241 @@
+ /* <style> */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+    }
+
+    header {
+        background-color: white;
+        color: #6a1b9a;
+        padding: 1rem;
+        font-size: 1.5rem;
+        margin-top: -20px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card h2 {
+        margin: 0;
+        font-size: 2rem;
+        color: #1a73e8;
+    }
+
+    .card p {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .card a {
+        text-decoration: none;
+        color: #1a73e8;
+        font-weight: bold;
+    }
+
+    .card a:hover {
+        text-decoration: underline;
+    }
+
+    .todo-card {
+        margin: 20px auto;
+        max-width: 800px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: left;
+        border-radius: 10px;
+    }
+
+    .new-task {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .new-task input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+    .new-task button {
+        padding: 10px 15px;
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+    .new-task button:hover {
+        background-color: #1558b0;
+    }
+
+    .todo ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .todo-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        transition: all 0.3s;
+    }
+
+
+    .task-text {
+        flex-grow: 1;
+        font-size: 1rem;
+        color: green;
+    }
+
+
+
+    .btn.delete {
+        background-color: #d32f2f;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        border-radius: 5px;
+    }
+
+    .btn.delete:hover {
+        background-color: #b71c1c;
+    }
+
+
+    /* Running Projects Section */
+    .project-running {
+        margin-top: 20px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .project-running h2 {
+        font-size: 2rem;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    .project-running table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .project-running th,
+    .project-running td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .project-running th {
+        background-color: #f4f4f4;
+    }
+
+    /* Notice and Holiday Tables */
+    .info-tables {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .info-table {
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .info-table h2 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+        color: #1a73e8;
+    }
+
+    .info-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .info-table th,
+    .info-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .info-table th {
+        background-color: #f4f4f4;
+    }
+
+    .notice-table {
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .notice-table h2 {
+        font-size: 1.8rem;
+        color: #6a1b9a;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .table-container {
+        max-height: 250px;
+        /* Scrollable if too many notices */
+        overflow-y: auto;
+    }
+
+    .notice-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .notice-table th,
+    .notice-table td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .notice-table th {
+        background-color: #f4f4f4;
+        color: black;
+    }
+
+    .notice-table tbody tr:nth-child(even) {
+        background-color: #fafafa;
+    }
+
+    .notice-table tbody tr:hover {
+        background-color: #e8f0fe;
+    }
+    /* </style> */

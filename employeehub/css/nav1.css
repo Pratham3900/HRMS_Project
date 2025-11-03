@@ -1,0 +1,271 @@
+ /* General Reset */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ /* Navigation Bar */
+ nav {
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 60px;
+     width: 100%;
+     background: black;
+     /* Black background */
+     transition: all 0.4s ease;
+     /* Smooth transition */
+     display: flex;
+     justify-content: space-between;
+     /* Space between left and right items */
+     align-items: center;
+     /* Vertically center the content */
+     padding: 0 10px;
+     
+ }
+
+ /* When nav is open, move it to align with sidebar */
+ nav.open {
+     left: 200px;
+     /* Same as sidebar width */
+ }
+
+ /* Left group: menu icon */
+ nav .left-group {
+     display: flex;
+     align-items: center;
+ }
+
+ /* When the sidebar is open, rotate the left menu icon 360 degrees clockwise */
+ nav.open .menu-icon {
+     transform: rotate(360deg);
+     /* Rotate clockwise when open */
+     transition: transform 0.4s ease;
+     /* Smooth rotation */
+ }
+
+ /* Default state - icon should be in its initial position (no rotation) when sidebar is closed */
+ nav .menu-icon {
+     transform: rotate(0deg);
+     /* No rotation when closed */
+     transition: transform 0.4s ease;
+     /* Smooth transition */
+ }
+
+ /* Menu icon styling */
+ .left-group .menu-icon {
+     color: red;
+     /* Red color for menu icon */
+     font-size: 35px;
+     cursor: pointer;
+     transition: color 0.3s ease, transform 0.3s ease;
+ }
+
+ /* Hover effect for left menu icon */
+ .left-group .menu-icon:hover {
+     color: #ff4040;
+     /* Light red color on hover */
+     transform: scale(1.2) rotate(10deg);
+     /* Slight zoom and rotation effect */
+ }
+
+ /* Left group logo styling */
+ .left-group .logo-name {
+     color: white;
+     /* White color for logo */
+     font-size: 25px;
+     font-weight: 500;
+     margin-left: 10px;
+     /* Space between menu icon and logo */
+     transition: transform 0.3s ease, color 0.3s ease;
+ }
+
+ /* Hover effect for logo */
+ .left-group .logo-name:hover {
+     color: red;
+     /* Change to red when hovered */
+     transform: translateX(15px) scale(1.1);
+     /* Slide and zoom effect */
+ }
+
+ /* Right group: user icon */
+ nav .right-group {
+     transition: transform 0.4s ease;
+ }
+
+ /* When sidebar is open, move the right-group 200px to the left */
+ nav.open .right-group {
+     transform: translateX(-200px);
+ }
+
+ .right-group .menu-icon-2 {
+     color: white;
+     /* White color for user icon */
+     font-size: 30px;
+     margin-right: 20px;
+     padding: 10px;
+     background-color: red;
+     /* Dark gray background */
+     border-radius: 50%;
+     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ /* Hover effect for user profile icon */
+ .right-group .menu-icon-2:hover {
+     background-color: white;
+
+     color: red;
+     transform: scale(1.1);
+
+     box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+     /* Glowing effect */
+ }
+
+
+ /* Sidebar Styles */
+ nav .sidebar {
+     position: fixed;
+     top: 0;
+     left: -200px;
+     width: 200px;
+     height: 100vh;
+     padding: 20px 0;
+     background-color: white;
+     /* Changed from black to white */
+     transition: all 0.4s ease;
+     overflow-y: auto;
+     scrollbar-width: thin;
+     scrollbar-color: gray transparent;
+     /* box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2); */
+ }
+
+ nav.open .sidebar {
+     left: 0;
+ }
+
+ .sidebar-header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-bottom: 20px;
+     border-bottom: 1px solid #ddd;
+
+ }
+
+ .sidebar-header .avatar {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 10px;
+ }
+
+ .sidebar-header .user-name {
+     font-size: 18px;
+     font-weight: 600;
+     color: #333;
+ }
+
+
+ .sidebar .sidebar-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 100%;
+     padding: 30px 16px;
+     margin-top: -20px;
+ }
+
+ .sidebar-content .list {
+     list-style: none;
+     margin-left: -15px;
+ }
+
+ /* Navigation list items */
+ .lists .nav-link {
+     position: relative;
+     display: flex;
+     align-items: center;
+     /* Vertical center alignment */
+     padding: 14px 12px;
+     border-radius: 8px;
+     text-decoration: none;
+     margin-top: 15px;
+     justify-content: flex-start;
+     /* Start alignment for icon and text */
+     color: black;
+     border: 2px solid transparent;
+     transition: all 0.3s ease;
+ }
+
+ /* Hover state */
+ .lists .nav-link:hover {
+     border-color: red;
+     /* Blue border on hover */
+     background-color: rgba(0, 123, 255, 0.1);
+     /* Light blue background tint */
+     transform: translateY(-2px);
+     /* Slight lift effect */
+ }
+
+ /* Underline animation on hover */
+ .lists .nav-link::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     width: 0%;
+     height: 2px;
+     background-color: red;
+     transition: width 0.3s ease, left 0.3s ease;
+ }
+
+ .lists .nav-link:hover::after {
+     width: 100%;
+     left: 0;
+ }
+
+ /* Icon and Text alignment */
+ .nav-link .icon,
+ .nav-link .link {
+     display: flex;
+     /* Make each an inline flex container */
+     align-items: center;
+     /* Ensure their content is centered vertically */
+     transition: color 0.3s ease;
+ }
+
+ /* Icon specific styling */
+ .nav-link .icon {
+     font-size: 20px;
+ }
+
+ /* Text (link) styling */
+ .nav-link .link {
+     font-size: 20px;
+     font-weight: 550;
+     margin-left: 10px;
+     /* Space between icon and text */
+     flex-shrink: 0;
+     /* Prevent the text from shrinking */
+ }
+
+ /* Change color on hover */
+ .lists .nav-link:hover .icon,
+ .lists .nav-link:hover .link {
+     color: red;
+ }
+
+
+
+ .dashboard {
+     margin-top: 60px;
+     margin-left: 0;
+     padding: 20px;
+     transition: margin-left 0.4s ease;
+ }
+
+ nav.open~.dashboard {
+     margin-left: 200px;
+ }

@@ -1,0 +1,25 @@
+<?php
+
+// function sendSMS($phone, $email, $password) {
+//     $api_key = "c1HVSJewkNP68vMUqsrtirkpejOgjBHUQ5sWE9tbt9pZwExkwBSawHmflbVaBQHec5qXYdWkJTV2Sp9ENijbh1MOz3UIKl804yRfuoamLtrFs7Y5HmqXnW7UMR9ywTvSVOCu01B3jrDg";  // Replace with your API key
+//     $message = "Your HRMS login details: Username: $email, Password: $password. Please change your password after login.";
+//     $sender_id = "HRMS"; // Change based on provider
+
+//     // URL for Fast2SMS
+//     $sms_url = "https://www.fast2sms.com/dev/bulkV2?authorization=$api_key&route=t&sender_id=$sender_id&message=" . urlencode($message) . "&language=english&numbers=$phone";
+
+//     // Send SMS using file_get_contents
+//     $response = file_get_contents($sms_url);
+//     return $response;
+//      // DEBUG: Print API response
+//      echo "SMS Response: " . $response; 
+// }
+
+
+// if (mysqli_affected_rows($con) == 1) {
+    // Send SMS
+    // sendSMS($contact, $email, $password);
+
+    // header("location: employee.php"); 
+// }
+?>

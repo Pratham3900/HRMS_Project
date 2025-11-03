@@ -1,0 +1,256 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background: black; /* Black background */
+    transition: all 0.4s ease; /* Smooth transition */
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center; /* Vertically center the content */
+    padding: 0 10px; /* Padding on the sides */
+}
+
+/* When nav is open, move it to align with sidebar */
+nav.open {
+    left: 200px; /* Same as sidebar width */
+}
+
+/* Left group: menu icon */
+nav .left-group {
+    display: flex;
+    align-items: center;
+}
+
+/* When the sidebar is open, rotate the left menu icon 360 degrees clockwise */
+nav.open .menu-icon {
+    transform: rotate(360deg); /* Rotate clockwise when open */
+    transition: transform 0.4s ease; /* Smooth rotation */
+}
+
+/* Default state - icon should be in its initial position (no rotation) when sidebar is closed */
+nav .menu-icon {
+    transform: rotate(0deg); /* No rotation when closed */
+    transition: transform 0.4s ease; /* Smooth transition */
+}
+
+/* Menu icon styling */
+.left-group .menu-icon {
+    color: red; /* Red color for menu icon */
+    font-size: 35px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for left menu icon */
+.left-group .menu-icon:hover {
+    color: #ff4040; /* Light red color on hover */
+}
+
+/* Left group logo styling */
+.left-group .logo-name {
+    color: white; /* White color for logo */
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 10px; /* Space between menu icon and logo */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for logo */
+.left-group .logo-name:hover {
+    color: red; /* Change to red when hovered */
+    transform: translateX(10px); /* Slide effect for logo */
+}
+
+/* Right group: user icon */
+nav .right-group {
+    transition: transform 0.4s ease;
+}
+
+/* When sidebar is open, move the right-group 200px to the left */
+nav.open .right-group {
+    transform: translateX(-200px);
+}
+
+.right-group .menu-icon-2 {
+    color:white; /* White color for user icon */
+    font-size: 30px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: red; /* Dark gray background */
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for user profile icon */
+.right-group .menu-icon-2:hover {
+    background-color: white; /* Red background on hover */
+    color: red;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+
+/* Sidebar Styles */
+nav .sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hidden */
+    width: 200px;
+    height: 100vh;
+    padding: 20px 0;
+    background-color: white; /* White background */
+    transition: all 0.4s ease;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #beadea transparent; /* Medium purple custom scrollbar */
+  
+}
+
+nav.open .sidebar {
+    left: 0; /* Sidebar slides in */
+}
+
+/* Style for user name in sidebar */
+.sidebar .name-of-user {
+    /* font-size: 10px; */
+    font-weight:600;
+    text-align: center; /* Center align the text */
+    padding: 15px 0; /* Add spacing above and below */
+    color: #333; /* Dark text color */
+    border-bottom: 3px solid black; /* Separate it from the menu */
+}
+/* Sidebar Content */
+.sidebar .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 30px 16px;
+    margin-top: -20px;
+}
+
+.sidebar-content .list {
+    list-style: none;
+    margin-left: -15px;
+}
+
+/* Sidebar Navigation Links */
+.list .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+    justify-content: space-between;
+    color: #333; /* Dark text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on sidebar links */
+.lists .nav-link:hover {
+    background-color: #f4e1fe; /* Light purple background on hover */
+    color: #7c4dff; /* Medium purple text on hover */
+}
+
+/* Icon styling */
+.nav-link .icon {
+    font-size: 20px;
+}
+
+/* Link Text Styling */
+.nav-link .link {
+    font-size: 20px;
+    font-weight: 550;
+    margin-left: 10px;
+    flex: 1;
+}
+
+/* Change color on hover */
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+    color: #7c4dff; /* Medium purple text on hover */
+}
+
+/* Submenu Styles */
+.submenu.active {
+    display: block;
+}
+
+.bx-chevron-right.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0 0 0 9px;
+    position: relative;
+    border-left: 3px solid #7c4dff; /* Medium purple border */
+    display: none;
+    margin-left: 20px;
+}
+
+.submenu li {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #555; /* Medium grayish color for submenu text */
+    font-size: 18px;
+    font-weight: 550;
+    padding-left: 10px;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for submenu links */
+.submenu li a:hover {
+    color: #7c4dff; /* Medium purple text on hover */
+}
+
+.submenu li a.active {
+    color: #7c4dff; /* Active submenu item with medium purple */
+    font-weight: bold;
+}
+
+.submenu li a::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 2px;
+    background-color: #7c4dff; /* Medium purple line for submenu items */
+}
+
+.submenu li a.active::before {
+    background-color: #5f3a99; /* Darker medium purple line for active item */
+}
+
+/* Dashboard Styles */
+.dashboard {
+    margin-top: 60px; /* To stay below navbar */
+    margin-left: 0; /* Default margin when sidebar is closed */
+    padding: 20px;
+    transition: margin-left 0.4s ease;
+   
+}
+
+nav.open ~ .dashboard {
+    margin-left: 200px; /* Adjust to sidebar width */
+}
+
